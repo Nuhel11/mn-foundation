@@ -26,8 +26,8 @@ export default function DonatePage() {
           <div className="space-y-8">
             <div className="relative h-64 w-full overflow-hidden rounded-[2rem] shadow-lg">
               <Image 
-                src="/hero-impact.jpg" 
-                alt="Donation Impact" 
+                src="/shelter.jpg" 
+                alt="shelter" 
                 fill 
                 className="object-cover"
               />
