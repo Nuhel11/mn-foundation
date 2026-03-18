@@ -18,7 +18,7 @@ const projects = [
   {
     title: 'Education',
     description: 'Supporting learning for children and providing school meals.',
-    image: '/education.jpg',
+    image: '/study.jpg',
     href: '/projects/education',
   },
   {
