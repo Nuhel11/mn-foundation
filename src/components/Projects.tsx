@@ -12,13 +12,13 @@ const projects = [
   {
     title: 'Empowering livelihood',
     description: "Supporting those who's livelihood have been adversely affected.",
-    image: '/livelihood2nd.jpg',
+    image: '/livelihood-second.jpg',
     href: '/projects/livelihood',
   },
   {
     title: 'Education',
     description: 'Supporting learning for children and providing school meals.',
-    image: '/Education.jpg',
+    image: '/education.jpg',
     href: '/projects/education',
   },
   {
