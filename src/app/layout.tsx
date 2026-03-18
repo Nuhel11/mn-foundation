@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "MN Foundation | Ending Poverty in Bangladesh",
-  description: "Providing shelter, medical aid, and sustainable livelihood to those in need across Bangladesh. Charity No: 1215654.",
+  description: "Providing shelter, medical aid, and sustainable livelihood to those in need across Bangladesh.",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
         <Navbar />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
