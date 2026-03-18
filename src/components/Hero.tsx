@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-impact.jpg" 
+          src="/heroImpact.jpg" 
           alt="MN Foundation Bangladesh Project"
           fill
           className="object-cover brightness-[0.4]"
