@@ -2,52 +2,65 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'; // Add this
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname(); // Detect which page we are on
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Check if we are on the home page. 
-  // If we ARE NOT on home, or if we ARE scrolled, show the dark text/white bg.
-  const isSolid = pathname !== '/' || isScrolled;
+  // Determine if we need dark text (on Donate page or when scrolled)
+  const isLightPage = pathname === '/donate';
+  const showSolid = isScrolled || isLightPage;
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isSolid ? 'bg-white shadow-md py-4' : 'bg-transparent py-6'
+    <nav className={`fixed w-full z-[100] transition-all duration-300 ${
+      showSolid ? 'bg-white shadow-md py-4' : 'bg-transparent py-6'
     }`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        
         {/* Logo */}
-        <Link href="/" className={`text-2xl font-bold transition-colors ${
-          isSolid ? 'text-slate-900' : 'text-white'
-        }`}>
+        <Link href="/" className={`text-2xl font-bold ${showSolid ? 'text-slate-900' : 'text-white'}`}>
           MN <span className="text-emerald-600">Foundation</span>
         </Link>
 
-        {/* Links */}
-        <div className={`hidden md:flex items-center gap-8 font-medium ${
-          isSolid ? 'text-slate-600' : 'text-white/90'
-        }`}>
-          <Link href="/#about" className="hover:text-emerald-600 transition-colors">About</Link>
-          <Link href="/#projects" className="hover:text-emerald-600 transition-colors">Projects</Link>
-          <Link href="/donate" className={`px-6 py-2 rounded-full transition-all ${
-            isSolid 
-              ? 'bg-emerald-600 text-white hover:bg-emerald-700' 
-              : 'bg-white text-slate-900 hover:bg-emerald-50'
-          }`}>
-            Donate
-          </Link>
+        {/* Desktop Menu */}
+        <div className={`hidden md:flex items-center gap-8 ${showSolid ? 'text-slate-600' : 'text-white'}`}>
+          <Link href="/#about" className="hover:text-emerald-600">About</Link>
+          <Link href="/#projects" className="hover:text-emerald-600">Projects</Link>
+          <Link href="/donate" className="bg-emerald-600 text-white px-6 py-2 rounded-full font-bold">Donate</Link>
         </div>
+
+        {/* Mobile Burger Button - Visible on md:hidden */}
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden relative z-[110] p-2"
+          aria-label="Toggle Menu"
+        >
+          {isOpen ? (
+            <X size={30} className="text-slate-900" />
+          ) : (
+            <Menu size={30} className={showSolid ? "text-slate-900" : "text-white"} />
+          )}
+        </button>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isOpen && (
+        <div className="fixed inset-0 bg-white z-[105] flex flex-col items-center justify-center gap-8 text-2xl font-bold text-slate-900 md:hidden">
+          <Link href="/#about" onClick={() => setIsOpen(false)}>About</Link>
+          <Link href="/#projects" onClick={() => setIsOpen(false)}>Projects</Link>
+          <Link href="/donate" onClick={() => setIsOpen(false)} className="bg-emerald-600 text-white px-10 py-4 rounded-full">Donate Now</Link>
+          <button onClick={() => setIsOpen(false)} className="text-sm text-slate-400 uppercase tracking-widest">Close</button>
+        </div>
+      )}
     </nav>
   );
 }
