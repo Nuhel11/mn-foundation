@@ -33,7 +33,7 @@ export default function AboutSection() {
           <div className="relative h-[450px] w-full overflow-hidden rounded-3xl bg-[#0a0a0a] shadow-2xl lg:ml-auto">
              {/* Actual Image from your first snippet */}
              <Image
-                src="/2nd picture.jpg" 
+                src="/2ndPicture.jpg" 
                 alt="Community impact in Bangladesh"
                 fill
                 className="object-cover opacity-60" // Lowered opacity to let the black background show through

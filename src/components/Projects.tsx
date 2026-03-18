@@ -12,7 +12,7 @@ const projects = [
   {
     title: 'Empowering livelihood',
     description: "Supporting those who's livelihood have been adversely affected.",
-    image: '/livelihood-2nd.jpg',
+    image: '/livelihood2nd.jpg',
     href: '/projects/livelihood',
   },
   {
