@@ -10,10 +10,10 @@ export default function Footer() {
         
         <form className="mx-auto max-w-md space-y-4">
           <div className="text-left">
-            <label className="mb-2 ml-1 block text-sm font-semibold text-slate-700">Your Name</label>
+            <label className="mb-2 ml-1 block text-sm font-semibold text-slate-700">Your E-mail</label>
             <input 
               type="text" 
-              placeholder="Enter name" 
+              placeholder="Enter E-mail" 
               className="w-full rounded-xl border border-slate-200 px-6 py-4 transition-all focus:ring-2 focus:ring-emerald-500 focus:outline-none"
             />
           </div>
@@ -45,10 +45,10 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="text-xs font-bold tracking-widest text-gray-400 uppercase">Connect</h4>
             <div className="space-y-3">
-              <p className="text-sm font-semibold">Your Name</p>
+              <p className="text-sm font-semibold">Your E-mail</p>
               <input 
                 type="text" 
-                placeholder="Enter name" 
+                placeholder="Enter E-mail" 
                 className="w-full rounded-lg bg-white px-4 py-2 text-slate-900 focus:outline-none"
               />
               <button className="rounded-full bg-black px-6 py-2 text-sm font-bold text-white transition-all hover:bg-slate-900">
