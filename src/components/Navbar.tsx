@@ -35,6 +35,7 @@ export default function Navbar() {
         <div className={`hidden md:flex items-center gap-8 ${showSolid ? 'text-slate-600' : 'text-white'}`}>
           <Link href="/about" className="hover:text-emerald-600 transition-colors font-medium">About</Link>
           <Link href="/#projects" className="hover:text-emerald-600">Projects</Link>
+          <Link href="/contact" className="hover:text-emerald-400">Contact</Link>
           <Link href="/donate" className="bg-emerald-600 text-white px-6 py-2 rounded-full font-bold">Donate</Link>
         </div>
 
@@ -57,6 +58,9 @@ export default function Navbar() {
         <div className="fixed inset-0 bg-white z-[105] flex flex-col items-center justify-center gap-8 text-2xl font-bold text-slate-900 md:hidden">
           <Link href="/about" onClick={() => setIsOpen(false)}>About</Link>
           <Link href="/#projects" onClick={() => setIsOpen(false)}>Projects</Link>
+          <Link href="/contact" onClick={() => setIsOpen(false)} className="hover:text-emerald-600 transition-colors">
+      Contact
+    </Link>
           <Link href="/donate" onClick={() => setIsOpen(false)} className="bg-emerald-600 text-white px-10 py-4 rounded-full">Donate Now</Link>
           <button onClick={() => setIsOpen(false)} className="text-sm text-slate-400 uppercase tracking-widest">Close</button>
         </div>
