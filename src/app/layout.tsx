@@ -17,6 +17,24 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "MN Foundation | Ending Poverty in Bangladesh",
   description: "Providing shelter, medical aid, and sustainable livelihood to those in need across Bangladesh.",
+  // --- ADD THIS SECTION ---
+  icons: {
+    icon: "/icon.png", // This is for the browser tab
+    apple: "/icon.png", // This is for mobile home screens
+  },
+  openGraph: {
+    title: "MN Foundation | Ending Poverty in Bangladesh",
+    description: "Providing shelter, medical aid, and sustainable livelihood to those in need across Bangladesh.",
+    images: [
+      {
+        url: "/icon.png",
+        width: 1200,
+        height: 630,
+        alt: "MN Foundation Logo",
+      },
+    ],
+  },
+  // -----------------------
 };
 
 export default function RootLayout({
