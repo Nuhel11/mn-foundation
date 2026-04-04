@@ -27,7 +27,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-sm font-bold tracking-wider text-slate-400 uppercase">Email Us</p>
-                  <p className="text-lg font-semibold text-slate-900">info@mnfoundation.org.uk</p>
+                  <p className="text-lg font-semibold text-slate-900">info@mnfoundation.uk</p>
                 </div>
               </div>
 
