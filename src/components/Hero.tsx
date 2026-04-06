@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-17"> {/* Added pt-20 to push content down */}
+    <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-17">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -17,10 +17,10 @@ export default function Hero() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-12"> {/* Added pt-12 for extra breathing room */}
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-12">
         <div className="flex flex-col items-center text-center text-white">
           
-          {/* Lowered the Charity Badge and gave it more margin-bottom */}
+          {/* Charity Badge */}
           <span className="mb-8 inline-block rounded-full border border-emerald-500/30 bg-emerald-600/20 px-4 py-1.5 text-sm font-medium text-emerald-400">
             Charity No: 1215654
           </span>
@@ -34,21 +34,15 @@ export default function Hero() {
             who need it most. Join us in making a lasting difference today.
           </p>
           
-{/* Updated Button Container: Equal width and perfect spacing */}
-<div className="flex w-full flex-col justify-center gap-4 px-4 sm:flex-row sm:gap-6 sm:px-0">
-  <Link 
-    href="/donate" 
-    className="inline-flex flex-1 items-center justify-center rounded-xl bg-[#00966b] px-10 py-4 text-lg font-semibold shadow-lg transition-all hover:bg-[#007a57] active:scale-95 sm:min-w-[220px] sm:flex-none"
-  >
-    Donate Now
-  </Link>
-  <Link 
-    href="/projects" 
-    className="inline-flex flex-1 items-center justify-center rounded-xl border border-white/20 bg-white/10 px-10 py-4 text-lg font-semibold backdrop-blur-md transition-all hover:bg-white/20 active:scale-95 sm:min-w-[220px] sm:flex-none"
-  >
-    View Projects
-  </Link>
-</div>
+          {/* Single Button Container */}
+          <div className="flex w-full justify-center px-4 sm:px-0">
+            <Link 
+              href="/donate" 
+              className="inline-flex w-full items-center justify-center rounded-xl bg-[#00966b] px-12 py-5 text-xl font-bold shadow-2xl shadow-emerald-900/20 transition-all hover:scale-105 hover:bg-[#007a57] active:scale-95 sm:w-auto sm:min-w-[280px]"
+            >
+              Donate Now
+            </Link>
+          </div>
         </div>
       </div>
     </section>
