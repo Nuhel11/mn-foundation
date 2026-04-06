@@ -27,25 +27,21 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         
         {/* Logo Section */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative h-12 w-12 md:h-14 md:w-14 overflow-hidden rounded-lg transition-transform group-hover:scale-105">
-            <Image 
-              src="/logo.jpeg" // Make sure the file name matches exactly what's in /public
-              alt="MN Foundation Logo"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-          <div className="flex flex-col">
-            <span className={`text-xl md:text-2xl font-bold leading-none ${showSolid ? 'text-slate-900' : 'text-white'}`}>
-              MN <span className="text-emerald-600">Foundation</span>
-            </span>
-            <span className={`text-[10px] uppercase tracking-[0.2em] font-bold ${showSolid ? 'text-slate-400' : 'text-emerald-400/80'}`}>
-              Bangladesh Relief
-            </span>
-          </div>
-        </Link>
+<Link href="/" className="flex items-center gap-3 group">
+  {/* Increased size: 
+      Mobile: h-16 w-32 (was h-12)
+      Desktop: md:h-20 md:w-40 (was h-14)
+  */}
+  <div className="relative h-16 w-32 md:h-20 md:w-40 overflow-hidden transition-transform group-hover:scale-105">
+    <Image 
+      src="/logo.jpeg" 
+      alt="MN Foundation Logo"
+      fill
+      className="object-contain object-left" // object-left keeps it aligned with the nav start
+      priority
+    />
+  </div>
+</Link>
 
         {/* Desktop Menu */}
         <div className={`hidden md:flex items-center gap-8 ${showSolid ? 'text-slate-600' : 'text-white'}`}>

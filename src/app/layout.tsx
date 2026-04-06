@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.mnfoundation.co.uk'),
   title: "MN Foundation | Ending Poverty in Bangladesh",
   description: "Providing shelter, medical aid, and sustainable livelihood to those in need across Bangladesh.",
   // --- ADD THIS SECTION ---
